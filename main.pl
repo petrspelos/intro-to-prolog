@@ -12,5 +12,8 @@ knows(draxis, alice).
 
 % canMeet
 canMeet(X, Y):- knows(X, Y).
+
+% This will recurse forever if X
+% cannot meet Y
 canMeet(X, Y):- knows(X, Z), canMeet(Z, Y).
 
