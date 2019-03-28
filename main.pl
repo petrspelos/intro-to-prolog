@@ -3,7 +3,7 @@ person(peter).
 person(senne).
 person(draxis).
 
-% Relationships
+% Pairs
 knows(peter, senne).
 knows(senne, peter).
 knows(peter, draxis).
