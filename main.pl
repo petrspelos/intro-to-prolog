@@ -1,3 +1,4 @@
+% people
 person(peter).
 person(senne).
 person(draxis).
