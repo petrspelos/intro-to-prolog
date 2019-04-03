@@ -74,3 +74,21 @@ o(5, [X, Y], [X1, Y], [X1, Y1]):-
 o(6, [X, Y], [X, Y1], [X1, Y1]):-
     X1 is X+1,
     Y1 is Y+1.
+
+arrange(V):- 
+    findall(X, p(X), S), 
+    fill(S, V),
+    vypis(V).
+
+fill([], []).
+fill(S, [[Jm, S1, S2, S3] | V]):- 
+    member(S1, S), 
+    o(Jm, S1, S2, S3), 
+    member(S2, S), 
+    member(S3, S),
+    diff(S, [S1, S2, S3], SN),
+    fill(SN, V).
+
+vypis([]).
+
+vypis([H|T]):- nl, write(H), vypis(T).
